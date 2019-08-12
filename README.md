@@ -12,13 +12,13 @@ This is a docker image to be able to run rancher with SSL using nginx and letsen
 ```bash
 # This will store certificates inside the container and they will be lost if the container is removed.
 
-sudo docker run --restart=always -p 80:80 -p 443:443 --link <rancher_name>:rancher-server --name rancher-ssl -d -e EMAIL=<your_email> -e DOMAIN=<your_domain> mckn/rancher-ssl
+sudo docker run --restart=always -p 80:80 -p 443:443 --link <rancher_name>:rancher-server --name rancher-ssl -d -e EMAIL=<your_email> -e DOMAIN=<your_domain> hajnalmt/rancher-ssl
 ```
 
 ```bash
 # Specify a volume to store your certificates on the host. They will be stored when you remove the container etc.
 
-sudo docker run --restart=always -p 80:80 -p 443:443 -v <host_vol>:/etc/letsencrypt --link <rancher_name>:rancher-server --name rancher-ssl -d -e EMAIL=<your_email> -e DOMAIN=<your_domain> mckn/rancher-ssl
+sudo docker run --restart=always -p 80:80 -p 443:443 -v <host_vol>:/etc/letsencrypt --link <rancher_name>:rancher-server --name rancher-ssl -d -e EMAIL=<your_email> -e DOMAIN=<your_domain> hajnalmt/rancher-ssl
 ```
 
 To inspect what your rancher-ssl container is doing run the follwing command:
