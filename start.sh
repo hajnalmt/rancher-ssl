@@ -1,5 +1,5 @@
 if [ ! -d /etc/letsencrypt/live/$DOMAIN ]; then
-  certbot certonly --dry-run --noninteractive --agree-tos --email $EMAIL --standalone -d $DOMAIN
+  certbot certonly --noninteractive --agree-tos --email $EMAIL --standalone -d $DOMAIN
 fi
 
 sed "s/<DOMAIN>/$DOMAIN/" ./nginx.conf > /etc/nginx/nginx.conf

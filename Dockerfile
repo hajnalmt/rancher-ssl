@@ -3,8 +3,7 @@ FROM nginx:latest
 RUN apt-get update \
     && apt-get install -y nano \     
     && apt-get install -y bc cron \
-    && apt-get install -y python-certbot-nginx \
-    && rm -rf /var/lib/apt/lists/*
+    && apt-get install -y python-certbot-nginx
 
 RUN mkdir -p /usr/src
 WORKDIR /usr/src
